@@ -41,6 +41,11 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+$app->bind('external.sightengine-service', 'App\Services\SightEngineService\Http\Contracts\SightEngineServiceInterface');
+$app->bind('App\Services\SightEngineService\Http\Contracts\SightEngineServiceInterface', 'App\Services\SightEngineService\SightEngineService');
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

@@ -1,8 +1,8 @@
 <?php
+namespace App\Services\SightEngineService\Http\routes;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
 use App\Services\SightEngineService\Http\Controllers\MainController;
 
 /*
@@ -16,8 +16,9 @@ use App\Services\SightEngineService\Http\Controllers\MainController;
 |
 */
 
-Route::get('/test', [MainController::class, 'test']);
+// Route::get("/test", function() {
+//     dd("alive");
+// });
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+ 
+Route::get('/test', [MainController::class, 'test']);
