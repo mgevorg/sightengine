@@ -9,6 +9,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Models\External\SightEngineData;
+use App\Events\SightEngineEvent;
 
 class SightEngineCheckVideo implements ShouldQueue
 {
@@ -54,10 +55,10 @@ class SightEngineCheckVideo implements ShouldQueue
             
             $output = json_decode($response, true);
 
-        SightEngineData::create([
+        event(new SightEngineEvent(SightEngineData::create([
             'data' => $response,
             'type' => $this->type,
             'request' => $this->path
-        ]);
+        ])));
     }
 }

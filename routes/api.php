@@ -3,7 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Services\SightEngineService\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +14,6 @@ use App\Services\SightEngineService\Http\Controllers\MainController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::get('/test', [MainController::class, 'test']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
